@@ -8,7 +8,7 @@
 
 SELECT		locationext_id, 
 				redhires, 
-				CONVERT(VARCHAR(19), grandopeningdate, 120) as grandopeningdate,  
+				TO_CHAR(grandopeningdate, 'YYYY-MM-DD HH24:MI:SS') as grandopeningdate,  
 				<BATCHDATE> as ExtractDate, 
 				<BATCHDATE> as BatchDate, 
 				<SOURCESKEY> as SourceSkey 

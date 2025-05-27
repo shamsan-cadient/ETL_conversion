@@ -15,7 +15,7 @@
 		ClosedDate,
 		HiredJobBid_Id,
 		Client_Id,
-		CONVERT(VARCHAR(19), datecreated, 120) as DateCreated,  
+		TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as DateCreated,  
 		CreatedBy, 
 		<BATCHDATE> as ExtractDate, 
 		<BATCHDATE> as BatchDate, 

@@ -6,11 +6,10 @@
 -- MaxVersion: 999
 -- Extracted on: 2025-05-25T17:11:39.330477
 
-SELECT		/*+first_rows cursor_sharing_exact INDEX(jbwi, FBI_JBWI_DATELASTMODIFIED)*/
-				jobbid_workflow_instance_id, 
+SELECT		jobbid_workflow_instance_id, 
 				version, 
-				CONVERT(VARCHAR(19), datecreated, 120) as datecreated, 
-			    CONVERT(VARCHAR(19), datelastmodified, 120) as datelastmodified, 
+				TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated, 
+			    TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified, 
 				createdby, 
 				lastmodifiedby, 
 				jobbid_id, 

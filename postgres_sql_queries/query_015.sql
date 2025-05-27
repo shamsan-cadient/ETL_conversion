@@ -6,9 +6,7 @@
 -- MaxVersion: 999
 -- Extracted on: 2025-05-25T17:11:39.330063
 
-
-
-   SELECT /*+ index(jbr IX_JOBBID_RESP_DATEMOD) index(r SYS_C009206) */ 
+SELECT 
 				jbr.jobbid_response_id, 
 				jbr.version, 
 				jbr.script_id, 
@@ -16,11 +14,11 @@
 				jbr.jobbid_id, 
 				
 				case when q.datameaning_id IS NOT NULL and r.answer_id IS NULL  				
-				then CAST(jbr.answer AS NVARCHAR(510) ) else '' end answer,				 				
+			then CAST(jbr.answer AS VARCHAR(510) ) else '' end answer, 							
 				jbr.responsegroup,			
 				jbr.responsegroup, 
-				CONVERT(VARCHAR(19), jbr.datecreated, 120) as datecreated, 
-			    CONVERT(VARCHAR(19), jbr.datelastmodified, 120) as datelastmodified, 
+			TO_CHAR(jbr.datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated, 
+			TO_CHAR(jbr.datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified, 
 				jbr.createdby, 
 				jbr.lastmodifiedby, 
 				jbr.responserank, 

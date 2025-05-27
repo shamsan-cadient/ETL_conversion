@@ -8,11 +8,11 @@
 
 SELECT	jobbid_id, 
 		client_id, 
-		CONVERT(VARCHAR(19), date_purged_utc, 120) as date_purged_utc,
+		TO_CHAR(date_purged_utc, 'YYYY-MM-DD HH24:MI:SS') as date_purged_utc,
 		document_id, 
 		userinfo_id, 
 		<BATCHDATE> as ExtractDate, 
 		<BATCHDATE> as BatchDate, 
 		<SOURCESKEY> as SourceSkey 
 	 FROM post_purge  
-	 WHERE (date_purged_utc >(select top 1 DATE_PURGED_UTC_HWM from post_purge_hwm where process_name='Analytics')) 
+	 WHERE (date_purged_utc >(select DATE_PURGED_UTC_HWM from post_purge_hwm where process_name='Analytics' LIMIT 1)) 

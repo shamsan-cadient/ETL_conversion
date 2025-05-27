@@ -13,8 +13,8 @@ SELECT		h.jobbid_workflow_history_id,
 				h.nodename, 
 				h.event, 
 				h.processinstance_id, 
-				CONVERT(VARCHAR(19), datecreated, 120) as datecreated, 
-			    CONVERT(VARCHAR(19), h.datelastmodified, 120) as datelastmodified, 
+				TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated, 
+			    TO_CHAR(h.datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified, 
 				h.createdby, 
 				h.lastmodifiedby, 
 				h.actiontype, 
@@ -24,9 +24,9 @@ SELECT		h.jobbid_workflow_history_id,
 				<BATCHDATE> as ExtractDate, 
 				<BATCHDATE> as BatchDate, 
 				<SOURCESKEY> as SourceSkey 
-	 FROM jobbid_workflow_history h with(nolock)
-	 LEFT OUTER JOIN jbpm_variableinstance nv with(nolock)
+	 FROM jobbid_workflow_history h
+	 LEFT OUTER JOIN jbpm_variableinstance nv
 	 ON nv.processinstance_= h.processinstance_id AND LOWER(nv.name_) = LOWER(h.nodename + '.nodetype') 
-	 LEFT OUTER JOIN jbpm_variableinstance nc with(nolock)
+	 LEFT OUTER JOIN jbpm_variableinstance nc
 	 ON nc.processinstance_= h.processinstance_id AND nc.name_ = 'workflowCategory'
 	 WHERE (h.datelastmodified >= <FROMDATE_Q>)

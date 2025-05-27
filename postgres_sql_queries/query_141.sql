@@ -6,16 +6,15 @@
 -- MaxVersion: 999
 -- Extracted on: 2025-05-25T17:11:39.345438
 
-SELECT		/*+first_rows cursor_sharing_exact INDEX(e, FBI_E_DATELASTMODIFIED)*/
-				education_id, 
+SELECT		education_id, 
 				version, 
 				schoolname, 
 				city, 
 				state, 
 				country, 
-				CONVERT(VARCHAR(19), startdate, 120) as startdate,
-				CONVERT(VARCHAR(19), enddate, 120) as enddate,
-				CONVERT(VARCHAR(19), graduationdate, 120) as graduationdate,
+				TO_CHAR(startdate, 'YYYY-MM-DD HH24:MI:SS') as startdate,
+				TO_CHAR(enddate, 'YYYY-MM-DD HH24:MI:SS') as enddate,
+				TO_CHAR(graduationdate, 'YYYY-MM-DD HH24:MI:SS') as graduationdate,
 				didgraduate, 
 				degree, 
 				major, 
@@ -25,8 +24,8 @@ SELECT		/*+first_rows cursor_sharing_exact INDEX(e, FBI_E_DATELASTMODIFIED)*/
 				previousname, 
 				yearscompleted, 
 				schooltype, 
-				CONVERT(VARCHAR(19), datecreated, 120) as datecreated, 
-				CONVERT(VARCHAR(19), datelastmodified, 120) as datelastmodified,  
+				TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated, 
+				TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified,  
 				createdby, 
 				lastmodifiedby, 
 				document_id, 

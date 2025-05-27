@@ -18,8 +18,8 @@
 			,isprimary
 			,iscomplete
 			
-			,	CONVERT(VARCHAR(19), datecreated, 120) as datecreated
-			,CONVERT(VARCHAR(19), datelastmodified, 120)  AS datelastmodified
+			,	TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated
+			,TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS')  AS datelastmodified
 			,createdby
 			,lastmodifiedby
 			,assessmentphase_id

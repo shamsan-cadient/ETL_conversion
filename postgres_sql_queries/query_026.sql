@@ -17,9 +17,9 @@
 				traittext_redscore, 
 				traittext_yellowscore, 
 				traittext_greenscore, 
-						CONVERT(VARCHAR(19), datecreated, 120) AS datecreated
+						TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') AS datecreated
 				,createdby, 
-				CONVERT(VARCHAR(19), datelastmodified, 120) AS datelastmodified , 
+				TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') AS datelastmodified , 
 				lastmodifiedby, 
 				interquestions interquestions, 
 				<BATCHDATE> as ExtractDate, 

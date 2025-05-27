@@ -14,4 +14,4 @@ SELECT		client_id,
 				<BATCHDATE> as extractdate, 
 				<BATCHDATE> as batchdate, 
 				<SOURCESKEY> as sourceskey 
-	 FROM jobbid_process_driver
+	 FROM dbo.jobbid_process_driver

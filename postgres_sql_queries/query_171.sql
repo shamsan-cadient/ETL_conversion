@@ -14,10 +14,10 @@ SELECT
 				jbr.jobbid_id, 
 				--Grab the text for the answer if it is for a Datameaning that does not have a standard answer value (like Birth Date)
 				case when q.datameaning_id IS NOT NULL and r.answer_id IS NULL then SUBSTRING(jbr.answer, 1, 255) 
-				else '' end answer,				
+				else '''' end answer,				
 				jbr.responsegroup, 
-				TO_CHAR(jbr.datecreated,'YYYY-MM-DD HH24:MI:SS') as datecreated, 
-				TO_CHAR(jbr.datelastmodified,'YYYY-MM-DD HH24:MI:SS') as datelastmodified, 
+				TO_CHAR(jbr.datecreated,''YYYY-MM-DD HH24:MI:SS'') as datecreated, 
+				TO_CHAR(jbr.datelastmodified,''YYYY-MM-DD HH24:MI:SS'') as datelastmodified, 
 				jbr.createdby, 
 				jbr.lastmodifiedby, 
 				jbr.responserank, 
@@ -26,12 +26,12 @@ SELECT
 				<BATCHDATE> as ExtractDate, 
 				<BATCHDATE> as BatchDate, 
 				<SOURCESKEY> as SourceSkey 
-	 FROM jobbid_response jbr 
-	 INNER JOIN response_atao r 
+	 FROM dbo.jobbid_response jbr 
+	 INNER JOIN dbo.response_atao r 
 	 ON jbr.response_id=r.response_id
-	 INNER JOIN script_question_atao sq
+	 INNER JOIN dbo.script_question_atao sq
 	 ON sq.script_id = jbr.script_id AND sq.question_id = r.question_id 
-	 INNER JOIN question_atao q ON r.question_id = q.question_id
+	 INNER JOIN dbo.question_atao q ON r.question_id = q.question_id
 	 WHERE (q.datameaning_id IS NOT NULL) 
 		AND jbr.datelastmodified >= <FROMDATE_Q>
 		AND jbr.datelastmodified <= <TODATE_Q>

@@ -13,7 +13,7 @@ SELECT		pa_score_id,
 				rawscore, 
 				score,
 				status,
-				TO_CHAR(statusdate, 'YYYY-MM-DD HH24:MI:SS') as statusdate,
+				TO_CHAR(statusdate, ''YYYY-MM-DD HH24:MI:SS'') as statusdate,
 				percentile,
 				language,
 				scriptscore_id,
@@ -24,5 +24,5 @@ SELECT		pa_score_id,
 				<BATCHDATE> as ExtractDate, 
 				<BATCHDATE> as BatchDate, 
 				<SOURCESKEY> as SourceSkey 
-	 FROM pa_score 
+	 FROM dbo.pa_score 
 	 WHERE (statusdate >= <FROMDATE_Q>)

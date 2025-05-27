@@ -18,7 +18,7 @@ SELECT		fs.pa_factorscore_id,
 				<BATCHDATE> as ExtractDate, 
 				<BATCHDATE> as BatchDate, 
 				<SOURCESKEY> as SourceSkey 
-	 FROM pa_factorscore fs 
-	 JOIN scriptscore ss 
+	 FROM dbo.pa_factorscore fs 
+	 JOIN dbo.scriptscore ss 
 	 ON fs.pa_factorscore_id = ss.scriptscore_id
 	 WHERE (ss.datelastmodified >= <FROMDATE_Q>)

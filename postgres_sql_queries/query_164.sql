@@ -17,8 +17,8 @@ SELECT
 			,<BATCHDATE> AS ExtractDate
 			,<BATCHDATE> AS BatchDate
 			,<SOURCESKEY> AS SourceSkey
-	FROM clientext p
-	INNER JOIN tmdclientext c
+	FROM dbo.clientext p
+	INNER JOIN dbo.tmdclientext c
 		ON p.clientext_id = c.clientext_id
 	WHERE
 		(p.datelastmodified >= <FROMDATE_Q>)

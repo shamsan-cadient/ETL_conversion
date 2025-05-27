@@ -12,11 +12,11 @@ SELECT		atfdetail_id AS availabilitytimeframedetail_id,
 				location_id,
 				isactive::integer,
 				ishighlight::integer,
-				TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated, 
-			    TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified,
+				TO_CHAR(datecreated, ''YYYY-MM-DD HH24:MI:SS'') as datecreated, 
+			    TO_CHAR(datelastmodified, ''YYYY-MM-DD HH24:MI:SS'') as datelastmodified,
 				createdby,
 				lastmodifiedby,
 				<BATCHDATE> as extractdate, 
 				<BATCHDATE> as batchdate, 
 				<SOURCESKEY> as sourceskey 
-	 FROM availabilitytimeframedetails
+	 FROM dbo.availabilitytimeframedetails

@@ -16,11 +16,11 @@
 		 old_value,
 		 new_value,
 		client_id,
-		TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated, 
+		TO_CHAR(datecreated, ''YYYY-MM-DD HH24:MI:SS'') as datecreated, 
 		createdby,
 		<BATCHDATE> as ExtractDate, 
 		<BATCHDATE> as BatchDate, 
 		<SOURCESKEY> as SourceSkey 
-FROM opening_audit 
+FROM dbo.opening_audit 
 WHERE (datecreated >= <FROMDATE_Q>) 
-AND   attribute in ('endDate', 'status') 
+AND   attribute in (''endDate'', ''status'') 

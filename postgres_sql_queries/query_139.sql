@@ -22,8 +22,8 @@
 				zip, 
 				phone, 
 				fax, 
-				TO_CHAR(startdate, 'YYYY-MM-DD HH24:MI:SS') as startdate,  
-	            TO_CHAR(enddate, 'YYYY-MM-DD HH24:MI:SS') as enddate, 
+				TO_CHAR(startdate, ''YYYY-MM-DD HH24:MI:SS'') as startdate,  
+	            TO_CHAR(enddate, ''YYYY-MM-DD HH24:MI:SS'') as enddate, 
 				enddatepresent::integer, 
 				isactive, 
 				responsegroup, 
@@ -43,8 +43,8 @@
 				CAST(description AS VARCHAR(2000)) as description, 
 				savedforlater::integer, 
 				customfield_id, 
-				TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated,  
-	            TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified, 
+				TO_CHAR(datecreated, ''YYYY-MM-DD HH24:MI:SS'') as datecreated,  
+	            TO_CHAR(datelastmodified, ''YYYY-MM-DD HH24:MI:SS'') as datelastmodified, 
 				createdby, 
 				lastmodifiedby, 
 				document_id, 
@@ -52,6 +52,6 @@
 				<BATCHDATE> as ExtractDate, 
 				<BATCHDATE> as BatchDate, 
 				<SOURCESKEY> as SourceSkey
-	 FROM workhistory_atao wha
+	 FROM dbo.workhistory_atao wha
 	WHERE (wha.datelastmodified >= <FROMDATE_Q>)
 		

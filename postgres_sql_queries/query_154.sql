@@ -16,8 +16,8 @@ SELECT
 			,<BATCHDATE> AS ExtractDate
 			,<BATCHDATE> AS BatchDate
 			,<SOURCESKEY> AS SourceSkey
-		FROM scriptscore p
-		INNER JOIN factorscore c
+		FROM dbo.scriptscore p
+		INNER JOIN dbo.factorscore c
 			ON p.scriptscore_id = c.factorscore_id
 		WHERE
 			(p.datelastmodified >= <FROMDATE_Q>)

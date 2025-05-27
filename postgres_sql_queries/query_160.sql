@@ -13,12 +13,12 @@ SELECT
 			,scoreband
 			,scorestatus
 			,jobbid_id
-			,TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated 
-			,TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified 
+			,TO_CHAR(datecreated, ''YYYY-MM-DD HH24:MI:SS'') as datecreated 
+			,TO_CHAR(datelastmodified, ''YYYY-MM-DD HH24:MI:SS'') as datelastmodified 
 			,createdby
 			,lastmodifiedby
 			,<BATCHDATE> AS ExtractDate
 			,<BATCHDATE> AS BatchDate
 			,<SOURCESKEY> AS SourceSkey
-		FROM phasescore p
+		FROM dbo.phasescore p
 		WHERE (p.datelastmodified >= <FROMDATE_Q>)

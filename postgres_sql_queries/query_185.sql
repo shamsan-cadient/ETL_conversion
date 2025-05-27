@@ -15,20 +15,20 @@ SELECT	sponsoredjob_id
 	,serviceid
 	,setid
 	,orderid
-    ,TO_CHAR(datetoprocess, 'YYYY-MM-DD HH24:MI:SS') as datetoprocess
+    ,TO_CHAR(datetoprocess, ''YYYY-MM-DD HH24:MI:SS'') as datetoprocess
 	,jobtype
 	,isshowcompensation::integer
-	,TO_CHAR(startdate, 'YYYY-MM-DD HH24:MI:SS') as jobstartdate
-    ,TO_CHAR(enddate, 'YYYY-MM-DD HH24:MI:SS') as jobenddate
+	,TO_CHAR(startdate, ''YYYY-MM-DD HH24:MI:SS'') as jobstartdate
+    ,TO_CHAR(enddate, ''YYYY-MM-DD HH24:MI:SS'') as jobenddate
 	,client_id
 	,location_id
 	,version
-	,TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated
-    ,TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified
+	,TO_CHAR(datecreated, ''YYYY-MM-DD HH24:MI:SS'') as datecreated
+    ,TO_CHAR(datelastmodified, ''YYYY-MM-DD HH24:MI:SS'') as datelastmodified
 	,createdby
 	,lastmodifiedby
 	,<BATCHDATE> as ExtractDate, 
 	<BATCHDATE> as BatchDate, 
 	<SOURCESKEY> as SourceSkey 
-	FROM sponsoredjob 
+	FROM dbo.sponsoredjob 
 	WHERE (datelastmodified >= <FROMDATE_Q>) 

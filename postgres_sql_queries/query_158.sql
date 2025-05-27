@@ -12,8 +12,8 @@ SELECT
 			,<BATCHDATE> AS ExtractDate
 			,<BATCHDATE> AS BatchDate
 			,<SOURCESKEY> AS SourceSkey
-		FROM assessmentphase p
-		INNER JOIN overallassessmentphase c
+		FROM dbo.assessmentphase p
+		INNER JOIN dbo.overallassessmentphase c
 			ON p.assessmentphase_id = c.overallassessmentphase_id
 		WHERE
 			(p.datelastmodified >= <FROMDATE_Q>) 

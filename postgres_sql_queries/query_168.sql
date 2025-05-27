@@ -16,7 +16,7 @@ SELECT
   null islocked, 
   null isrehireeligible, 
   null isexplicitlyunlocked, 
-  TO_CHAR(biddate, 'YYYY-MM-DD HH24:MI:SS') as biddate, 
+  TO_CHAR(biddate, ''YYYY-MM-DD HH24:MI:SS'') as biddate, 
   process_id, 
   prescreenscore, 
   prescreenrawscore, 
@@ -33,15 +33,15 @@ SELECT
   application_id, 
   location_id, 
   datachannel, 
-  TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') datecreated, 
-  TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') datelastmodified, 
-  TO_CHAR(datelockends, 'YYYY-MM-DD HH24:MI:SS') datelockends, 
-  TO_CHAR(dateapplicationexpires, 'YYYY-MM-DD HH24:MI:SS') dateapplicationexpires, 
+  TO_CHAR(datecreated, ''YYYY-MM-DD HH24:MI:SS'') datecreated, 
+  TO_CHAR(datelastmodified, ''YYYY-MM-DD HH24:MI:SS'') datelastmodified, 
+  TO_CHAR(datelockends, ''YYYY-MM-DD HH24:MI:SS'') datelockends, 
+  TO_CHAR(dateapplicationexpires, ''YYYY-MM-DD HH24:MI:SS'') dateapplicationexpires, 
   jobapplicationstatus, 
   initialstatus, 
   dirtybit, 
   pageflowinstance, 
-  TO_CHAR(datejaflockrelinquishes, 'YYYY-MM-DD HH24:MI:SS') datejaflockrelinquishes, 
+  TO_CHAR(datejaflockrelinquishes, ''YYYY-MM-DD HH24:MI:SS'') datejaflockrelinquishes, 
   appliedforlocation_id, 
   createdby, 
   lastmodifiedby, 
@@ -73,6 +73,6 @@ SELECT
   <BATCHDATE> as BatchDate, 
   <SOURCESKEY> as SourceSkey 
 FROM 
-  jobbid 
+  dbo.jobbid 
 WHERE 
   (datelastmodified >= <FROMDATE_Q>)

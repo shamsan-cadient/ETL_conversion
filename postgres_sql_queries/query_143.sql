@@ -26,8 +26,8 @@ SELECT		personadditionalinfo_id,
 				hasdrivingviolation::integer, 
 				haspreviousaddress::integer, 
 				hasged::integer, 
-				TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated, 
-			    TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified, 
+				TO_CHAR(datecreated, ''YYYY-MM-DD HH24:MI:SS'') as datecreated, 
+			    TO_CHAR(datelastmodified, ''YYYY-MM-DD HH24:MI:SS'') as datelastmodified, 
 				createdby, 
 				lastmodifiedby, 
 				document_id, 
@@ -35,5 +35,5 @@ SELECT		personadditionalinfo_id,
 				<BATCHDATE> as ExtractDate, 
 				<BATCHDATE> as BatchDate, 
 				<SOURCESKEY> as SourceSkey 
-	 FROM personadditionalinfo pai
+	 FROM dbo.personadditionalinfo pai
 	 WHERE (datelastmodified >= <FROMDATE_Q>)

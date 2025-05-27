@@ -13,8 +13,8 @@
 		vs.document_id, 
 		vs.veteranstatus, 
 		vs.dischargedate, 
-		TO_CHAR(d.datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated,  
-	    TO_CHAR(d.datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified,   
+		TO_CHAR(d.datecreated, ''YYYY-MM-DD HH24:MI:SS'') as datecreated,  
+	    TO_CHAR(d.datelastmodified, ''YYYY-MM-DD HH24:MI:SS'') as datelastmodified,   
 		vs.createdby, 
 		vs.lastmodifiedby, 
 		vs.version, 
@@ -23,7 +23,7 @@
 		<BATCHDATE> as ExtractDate, 
 		<BATCHDATE> as BatchDate, 
 		<SOURCESKEY> as SourceSkey 
-	 FROM veteranstatus vs 
-	 INNER JOIN document d 
+	 FROM dbo.veteranstatus vs 
+	 INNER JOIN dbo.document d 
 		ON vs.document_id = d.document_id 
 	 WHERE (d.datelastmodified >= <FROMDATE_Q>)

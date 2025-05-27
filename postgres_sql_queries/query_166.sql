@@ -16,12 +16,12 @@ SELECT		atf_id AS availabilitytimeframe_id,
 				jobopening_id,
 				isvalid::integer,
 				timeframetype,
-				TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated, 
-			    TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified, 
+				TO_CHAR(datecreated, ''YYYY-MM-DD HH24:MI:SS'') as datecreated, 
+			    TO_CHAR(datelastmodified, ''YYYY-MM-DD HH24:MI:SS'') as datelastmodified, 
 				createdby,
 				lastmodifiedby,
 				CAST(availabilitybits AS VARCHAR) as availabilitybits,
 				<BATCHDATE> as extractdate, 
 				<BATCHDATE> as batchdate, 
 				<SOURCESKEY> as sourceskey 
-	 FROM availabilitytimeframe
+	 FROM dbo.availabilitytimeframe

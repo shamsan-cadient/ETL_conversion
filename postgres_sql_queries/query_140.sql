@@ -16,12 +16,12 @@ SELECT		customfielddef_id,
 				maxsize, 
 				description, 
 				displaysetdefinitionname, 
-				TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated, 
-				TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified,
+				TO_CHAR(datecreated, ''YYYY-MM-DD HH24:MI:SS'') as datecreated, 
+				TO_CHAR(datelastmodified, ''YYYY-MM-DD HH24:MI:SS'') as datelastmodified,
 				createdby, 
 				lastmodifiedby, 
 				<BATCHDATE> as ExtractDate, 
 				<BATCHDATE> as BatchDate, 
 				<SOURCESKEY> as SourceSkey 
-	 FROM customfielddef 
+	 FROM dbo.customfielddef 
 	 WHERE (datelastmodified >= <FROMDATE_Q>)

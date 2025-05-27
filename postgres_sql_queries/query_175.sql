@@ -15,10 +15,10 @@
 		closeddate,
 		hiredjobbid_id,
 		client_id,
-		TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated,  
+		TO_CHAR(datecreated, ''YYYY-MM-DD HH24:MI:SS'') as datecreated,  
 		createdby, 
 		<BATCHDATE> as ExtractDate, 
 		<BATCHDATE> as BatchDate, 
 		<SOURCESKEY> as SourceSkey 
-	 FROM opening_inventory 
+	 FROM dbo.opening_inventory 
 	 WHERE (datecreated >= <FROMDATE_Q> OR closeddate >= <FROMDATE_Q>)

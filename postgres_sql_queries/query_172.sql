@@ -14,14 +14,14 @@
 		    ,viewedby_person_id
 		    ,person_id
 		    ,jobbid_id
-			,TO_CHAR(datelastviewed, 'YYYY-MM-DD HH24:MI:SS') as datelastviewed
-			,TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated 
+			,TO_CHAR(datelastviewed, ''YYYY-MM-DD HH24:MI:SS'') as datelastviewed
+			,TO_CHAR(datecreated, ''YYYY-MM-DD HH24:MI:SS'') as datecreated 
 			,createdby
 			,client_id
 			,<BATCHDATE> AS ExtractDate
 			,<BATCHDATE> AS BatchDate
 			,<SOURCESKEY> AS SourceSkey
-		FROM ofccp_view_audit
+		FROM dbo.ofccp_view_audit
 		WHERE
 			datelastviewed >= <FROMDATE_Q> 
 	

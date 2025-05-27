@@ -23,10 +23,10 @@ SELECT	job_history_log_id,
 		CAST(old_value AS VARCHAR) as old_value, 
 	    CAST(new_value AS VARCHAR) as new_value, 
 		mailsent::integer, 
-		TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated, 
+		TO_CHAR(datecreated, ''YYYY-MM-DD HH24:MI:SS'') as datecreated, 
 		createdby, 
 		<BATCHDATE> as ExtractDate, 
 		<BATCHDATE> as BatchDate, 
 		<SOURCESKEY> as SourceSkey 
-	 FROM job_history_log  
+	 FROM dbo.job_history_log  
 	 WHERE (datecreated >= <FROMDATE_Q>)

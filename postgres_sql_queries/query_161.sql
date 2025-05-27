@@ -12,8 +12,8 @@ SELECT
 			,position_id
 			,script_id
 			,script_type
-			,TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated 
-			,TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified 
+			,TO_CHAR(datecreated, ''YYYY-MM-DD HH24:MI:SS'') as datecreated 
+			,TO_CHAR(datelastmodified, ''YYYY-MM-DD HH24:MI:SS'') as datelastmodified 
 			,createdby
 			,lastmodifiedby
 			,scriptweight
@@ -23,4 +23,4 @@ SELECT
 			,<BATCHDATE> AS ExtractDate
 			,<BATCHDATE> AS BatchDate
 			,<SOURCESKEY> AS SourceSkey
-		FROM position_script
+		FROM dbo.position_script

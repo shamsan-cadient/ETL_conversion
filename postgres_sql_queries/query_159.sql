@@ -13,8 +13,8 @@ SELECT
 			,<BATCHDATE> AS ExtractDate
 			,<BATCHDATE> AS BatchDate
 			,<SOURCESKEY> AS SourceSkey
-		FROM phasescore p
-		INNER JOIN overallphasescore o
+		FROM dbo.phasescore p
+		INNER JOIN dbo.overallphasescore o
 			ON p.phasescore_id = o.overallphasescore_id		
 		WHERE
 		(p.datelastmodified >= <FROMDATE_Q>) 

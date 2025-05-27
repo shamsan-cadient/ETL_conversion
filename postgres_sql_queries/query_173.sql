@@ -14,12 +14,12 @@ SELECT	disabilitystatus_id,
 		ombnumber, 
 		document_id, 
 		client_id, 
-		TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated, 
+		TO_CHAR(datecreated, ''YYYY-MM-DD HH24:MI:SS'') as datecreated, 
 		createdby, 
-		TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified,
+		TO_CHAR(datelastmodified, ''YYYY-MM-DD HH24:MI:SS'') as datelastmodified,
 		lastmodifiedby, 
 		<BATCHDATE> as ExtractDate, 
 		<BATCHDATE> as BatchDate, 
 		<SOURCESKEY> as SourceSkey 
-	 FROM disabilitystatus  
+	 FROM dbo.disabilitystatus  
 	 WHERE (datelastmodified >= <FROMDATE_Q>)

@@ -1,0 +1,29 @@
+-- Query extracted from SSIS_SQLText
+-- FlowSQLId: 25
+-- FlowId: 25
+-- DatabaseTypeId: 2
+-- MinVersion: 8.5
+-- MaxVersion: 999
+-- Extracted on: 2025-05-25T17:11:39.331064
+
+
+		
+		SELECT LOCALEQUESTION_ID
+			,VERSION
+			,LOCALE_ID
+			,QUESTION_ID
+			,QUESTIONTEXT
+			,		CONVERT(VARCHAR(19), datecreated, 120) AS DATECREATED
+			,CREATEDBY
+			,		CONVERT(VARCHAR(19), DATELASTMODIFIED, 120) AS DATELASTMODIFIED
+			,LASTMODIFIEDBY
+			,QUESTIONSUBTEXT
+			,QUESTIONPOPUPTEXT
+			,QUESTIONADDITIONALNOTESTEXT,
+			<BATCHDATE> as ExtractDate, 
+				<BATCHDATE> as BatchDate, 
+				<SOURCESKEY> as SourceSkey 
+		FROM LOCALE_QUESTION_ATAO
+		WHERE 
+			(DateCreated >= <FROMDATE_Q>  or DateLastModified >= <FROMDATE_Q> )
+		

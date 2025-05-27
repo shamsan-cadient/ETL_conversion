@@ -19,7 +19,7 @@ SELECT
 			,lastmodifiedby
 			,scriptweight
 			,cutoffscore
-			,issilentscore
+			,issilentscore::integer
 			,<BATCHDATE> AS ExtractDate
 			,<BATCHDATE> AS BatchDate
 			,<SOURCESKEY> AS SourceSkey

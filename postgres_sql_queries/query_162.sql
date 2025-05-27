@@ -19,7 +19,7 @@ SELECT
 			,scriptweight
 			,cutoffscore
 			,assessmentphase_id
-			,issilentscore
+			,issilentscore::integer
 			,<BATCHDATE> AS ExtractDate
 			,<BATCHDATE> AS BatchDate
 			,<SOURCESKEY> AS SourceSkey

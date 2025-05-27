@@ -9,19 +9,19 @@
 
 		
 	 SELECT
-		    OFCCP_VIEW_AUDIT_ID
-		    ,VERSION
-		    ,VIEWEDBY_PERSON_ID
-		    ,PERSON_ID
-		    ,JOBBID_ID
-			,TO_CHAR(DATELASTVIEWED, 'YYYY-MM-DD HH24:MI:SS') as DATELASTVIEWED
-			,TO_CHAR(DATECREATED, 'YYYY-MM-DD HH24:MI:SS') as datecreated 
-			,CreatedBy
-			,CLIENT_ID
+		    ofccp_view_audit_id
+		    ,version
+		    ,viewedby_person_id
+		    ,person_id
+		    ,jobbid_id
+			,TO_CHAR(datelastviewed, 'YYYY-MM-DD HH24:MI:SS') as datelastviewed
+			,TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated 
+			,createdby
+			,client_id
 			,<BATCHDATE> AS ExtractDate
 			,<BATCHDATE> AS BatchDate
 			,<SOURCESKEY> AS SourceSkey
-		FROM OFCCP_VIEW_AUDIT
+		FROM ofccp_view_audit
 		WHERE
-			DATELASTVIEWED >= <FROMDATE_Q> 
+			datelastviewed >= <FROMDATE_Q> 
 	

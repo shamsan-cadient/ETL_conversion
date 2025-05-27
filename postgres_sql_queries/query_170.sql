@@ -7,21 +7,21 @@
 -- Extracted on: 2025-05-25T17:11:39.349782
 
 SELECT
-			DataMeaning_id
-			,Name
-			,Description
-			,Category
-			,IsReportable
-			,Label_id
-			,Client_id
-			,Version
+			datameaning_id
+			,name
+			,description
+			,category
+			,isreportable::integer
+			,label_id
+			,client_id
+			,version
 			,TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated 
-			,CreatedBy
+			,createdby
 			,TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified
-			,LastModifiedBy
+			,lastmodifiedby
 			,<BATCHDATE> AS ExtractDate
 			,<BATCHDATE> AS BatchDate
 			,<SOURCESKEY> AS SourceSkey
-		FROM DataMeaning
+		FROM datameaning
 		WHERE
 			(datelastmodified >= <FROMDATE_Q>)

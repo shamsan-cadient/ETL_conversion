@@ -6,15 +6,15 @@
 -- MaxVersion: 999
 -- Extracted on: 2025-05-25T17:11:39.350710
 
-SELECT		NonHireable_Id,
-                Version,
-				TO_CHAR(NonHireExpiry, 'YYYY-MM-DD HH24:MI:SS') as NonHireExpiry,
-                SSN,
-                Client_Id,
+SELECT		nonhireable_id,
+                version,
+				TO_CHAR(nonhireexpiry, 'YYYY-MM-DD HH24:MI:SS') as nonhireexpiry,
+                ssn,
+                client_id,
 				TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated, 
 			    TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified,
-				CreatedBy, 
-				LastModifiedBy, 
+				createdby, 
+				lastmodifiedby, 
 				<BATCHDATE> as ExtractDate, 
 				<BATCHDATE> as BatchDate, 
 				<SOURCESKEY> as SourceSkey 

@@ -9,16 +9,16 @@
 
 		
 		
-		SELECT	Opening_Inventory_Id,
-		Version,
-		Opening_Id,
-		ClosedDate,
-		HiredJobBid_Id,
-		Client_Id,
-		TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as DateCreated,  
-		CreatedBy, 
+		SELECT	opening_inventory_id,
+		version,
+		opening_id,
+		closeddate,
+		hiredjobbid_id,
+		client_id,
+		TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated,  
+		createdby, 
 		<BATCHDATE> as ExtractDate, 
 		<BATCHDATE> as BatchDate, 
 		<SOURCESKEY> as SourceSkey 
-	 FROM Opening_Inventory 
-	 WHERE (datecreated >= <FROMDATE_Q> OR ClosedDate >= <FROMDATE_Q>)
+	 FROM opening_inventory 
+	 WHERE (datecreated >= <FROMDATE_Q> OR closeddate >= <FROMDATE_Q>)

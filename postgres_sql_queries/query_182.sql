@@ -6,18 +6,18 @@
 -- MaxVersion: 999
 -- Extracted on: 2025-05-25T17:11:39.351336
 
-SELECT		VENDORINTEGRATION_ID,                    
-				VERSION,                                 
-				VENDOR_NAME,                                                                                          
-				INTEGRATION_TYPE,                                                                                                                                                                                                                                                                   
-				INTERNAL_NAME,                                                                                                                  
-				SCRIPTCATEGORY,                                                                                                                                                                                                                                                  
+SELECT		vendorintegration_id,                    
+				version,                                 
+				vendor_name,                                                                                          
+				integration_type,                                                                                                                                                                                                                                                                   
+				internal_name,                                                                                                                  
+				scriptcategory,                                                                                                                                                                                                                                                  
 				TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated,  
 			    TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified,         
-				CREATEDBY,                               
-				LASTMODIFIEDBY,                          
+				createdby,                               
+				lastmodifiedby,                          
 				<BATCHDATE> as ExtractDate, 
 				<BATCHDATE> as BatchDate, 
 				<SOURCESKEY> as SourceSkey 
-	 FROM VENDORINTEGRATION 
-	 WHERE (DATELASTMODIFIED >= <FROMDATE_Q>)
+	 FROM vendorintegration 
+	 WHERE (datelastmodified >= <FROMDATE_Q>)

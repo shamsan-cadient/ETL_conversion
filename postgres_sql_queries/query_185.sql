@@ -6,27 +6,27 @@
 -- MaxVersion: 999
 -- Extracted on: 2025-05-25T17:11:39.351706
 
-SELECT	SPONSOREDJOB_ID
-	,POSTING_ID
-	,JOBBOARDNAME
-	,ACTION
-	,SPONSOREDJOBSTATUS
-	,STATUS
-	,SERVICEID
-	,SETID
-	,ORDERID
-    ,TO_CHAR(DATETOPROCESS, 'YYYY-MM-DD HH24:MI:SS') as DATETOPROCESS
-	,JOBTYPE
-	,ISSHOWCOMPENSATION
-	,TO_CHAR(STARTDATE, 'YYYY-MM-DD HH24:MI:SS') as JOBSTARTDATE
-    ,TO_CHAR(ENDDATE, 'YYYY-MM-DD HH24:MI:SS') as JOBENDDATE
-	,CLIENT_ID
-	,LOCATION_ID
-	,VERSION
+SELECT	sponsoredjob_id
+	,posting_id
+	,jobboardname
+	,action
+	,sponsoredjobstatus
+	,status
+	,serviceid
+	,setid
+	,orderid
+    ,TO_CHAR(datetoprocess, 'YYYY-MM-DD HH24:MI:SS') as datetoprocess
+	,jobtype
+	,isshowcompensation::integer
+	,TO_CHAR(startdate, 'YYYY-MM-DD HH24:MI:SS') as jobstartdate
+    ,TO_CHAR(enddate, 'YYYY-MM-DD HH24:MI:SS') as jobenddate
+	,client_id
+	,location_id
+	,version
 	,TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated
     ,TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified
-	,CREATEDBY
-	,LASTMODIFIEDBY
+	,createdby
+	,lastmodifiedby
 	,<BATCHDATE> as ExtractDate, 
 	<BATCHDATE> as BatchDate, 
 	<SOURCESKEY> as SourceSkey 

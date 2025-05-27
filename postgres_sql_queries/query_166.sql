@@ -6,22 +6,22 @@
 -- MaxVersion: 999
 -- Extracted on: 2025-05-25T17:11:39.349164
 
-SELECT		ATF_Id AS AvailabilityTimeframe_Id, 
-				Version, 
-				Name, 
-				Day,
-				StartTime, 
-				EndTime, 
-				Location_Id,
-				Jobopening_id,
-				IsValid,
-				TimeframeType,
+SELECT		atf_id AS availabilitytimeframe_id, 
+				version, 
+				name, 
+				day,
+				starttime, 
+				endtime, 
+				location_id,
+				jobopening_id,
+				isvalid::integer,
+				timeframetype,
 				TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated, 
 			    TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified, 
-				CreatedBy,
-				LastModifiedBy,
-				CAST(availabilitybits AS VARCHAR) as Availabilitybits,
-				<BATCHDATE> as ExtractDate, 
-				<BATCHDATE> as BatchDate, 
-				<SOURCESKEY> as SourceSkey 
-	 FROM AvailabilityTimeframe
+				createdby,
+				lastmodifiedby,
+				CAST(availabilitybits AS VARCHAR) as availabilitybits,
+				<BATCHDATE> as extractdate, 
+				<BATCHDATE> as batchdate, 
+				<SOURCESKEY> as sourceskey 
+	 FROM availabilitytimeframe

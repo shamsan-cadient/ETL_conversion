@@ -6,12 +6,12 @@
 -- MaxVersion: 999
 -- Extracted on: 2025-05-25T17:11:39.349023
 
-SELECT		Client_Id,
-				JobBid_Id,
-				ProcessName,
-				Processed_aTao,
-				Processed_DW,
-				<BATCHDATE> as ExtractDate, 
-				<BATCHDATE> as BatchDate, 
-				<SOURCESKEY> as SourceSkey 
-	 FROM JobBid_Process_Driver
+SELECT		client_id,
+				jobbid_id,
+				processname,
+				processed_atao::integer,
+				processed_dw::integer,
+				<BATCHDATE> as extractdate, 
+				<BATCHDATE> as batchdate, 
+				<SOURCESKEY> as sourceskey 
+	 FROM jobbid_process_driver

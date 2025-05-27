@@ -40,9 +40,9 @@ SELECT jobbid_id
 	,appliedforlocation_id
 	,createdby
 	,lastmodifiedby
-	,ismetajobbid
+	,ismetajobbid::integer
 	,metajobbid_id
-	,wassaved
+	,wassaved::integer
 	,NULL AS islocked
 	,positionkey_id
 	,assessmentscore_id
@@ -50,17 +50,17 @@ SELECT jobbid_id
 	,migratedversion
 	,uniqueapplicationid
 	,guuid
-	,isformeremployee
+	,isformeremployee::integer
 	,NULL AS isrehireeligible
 	,i9taxwithholding_id
 	,w4taxwithholding_id
 	,scorebandsortvalue
 	,basepayamount
 	,basepayrate
-	,islocking
+	,islocking::integer
 	,biddatenumber
 	,eobflowinstance
-	,videoconfirmation
+	,videoconfirmation::integer
 	,overallphasescore_id
 	,scoredisplaylevel
 	,NULL AS isexplicitlyunlocked

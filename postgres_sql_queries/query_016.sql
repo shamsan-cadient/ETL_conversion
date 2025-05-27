@@ -11,14 +11,14 @@ SELECT jobbidscript_id
 	,script_id
 	,script_type
 	,scriptweight
-	,isprimary
-	,iscomplete
+	,isprimary::integer
+	,iscomplete::integer
 	,TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') AS datecreated
 	,TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') AS datelastmodified
 	,createdby
 	,lastmodifiedby
 	,assessmentphase_id
-	,issilentscore
+	,issilentscore::integer
 	,< BATCHDATE > AS ExtractDate
 	,< BATCHDATE > AS BatchDate
 	,< SOURCESKEY > AS SourceSkey

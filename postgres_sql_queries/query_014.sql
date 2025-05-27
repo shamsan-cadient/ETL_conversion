@@ -11,8 +11,8 @@ SELECT
 				jp.jobbid_id, 
 				jp.posting_id, 
 				jp.isqualified, 
-				jp.isprimary, 
-				jp.metassessmentcriteria, 
+				jp.isprimary::integer, 
+				jp.metassessmentcriteria::integer, 
 				<BATCHDATE> as ExtractDate, 
 				<BATCHDATE> as BatchDate, 
 				<SOURCESKEY> as SourceSkey 

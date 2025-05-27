@@ -11,13 +11,13 @@ SELECT		displaysetvalue_id,
 				definition_id, 
 				name, 
 				isactive, 
-				CONVERT(VARCHAR(19), datecreated, 120) as datecreated, 
-				CONVERT(VARCHAR(19), datelastmodified, 120) as datelastmodified,
+				 TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated, 
+                 TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified, 
 				createdby, 
 				lastmodifiedby, 
 				label_id, 
 				qual_id, 
-				<BATCHDATE> as ExtractDate, 
-				<BATCHDATE> as BatchDate, 
-				<SOURCESKEY> as SourceSkey 
-	 FROM displaysetvalue
+				:BATCHDATE as ExtractDate, 
+				:BATCHDATE as BatchDate, 
+				:SOURCESKEY as SourceSkey 
+	 FROM dbo.displaysetvalue

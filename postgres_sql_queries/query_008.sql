@@ -13,15 +13,15 @@ SELECT		document_id,
 				contenttype, 
 				documenttype, 
 				textsearchdocid,
-				CONVERT(VARCHAR(19), textsearchlastregistered, 120) as textsearchlastregistered, 
+				TO_CHAR(textsearchlastregistered, 'YYYY-MM-DD HH24:MI:SS') as textsearchlastregistered, 
 				jobbid_id, 
 				person_id, 
-				CONVERT(VARCHAR(19), datecreated, 120) as datecreated, 
-				CONVERT(VARCHAR(19), datelastmodified, 120) as datelastmodified,
+				TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated, 
+                TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified, 
 				createdby, 
 				lastmodifiedby, 
-				<BATCHDATE> as ExtractDate, 
-				<BATCHDATE> as BatchDate, 
-				<SOURCESKEY> as SourceSkey 
-	 FROM document 
-	 WHERE (datelastmodified >= <FROMDATE_Q>)
+				:BATCHDATE as ExtractDate, 
+				:BATCHDATE as BatchDate, 
+				:SOURCESKEY as SourceSkey 
+	 FROM dbo.document 
+	 WHERE datelastmodified >= :FROMDATE_Q

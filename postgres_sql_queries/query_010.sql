@@ -11,16 +11,16 @@ SELECT		flowactivation_id,
 				flowname, 
 				isactive, 
 				order_num, 
-				CONVERT(VARCHAR(19), datecreated, 120) as datecreated, 
-				CONVERT(VARCHAR(19), datelastmodified, 120) as datelastmodified,  
+				TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated, 
+				TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified,  
 				createdby, 
 				lastmodifiedby, 
 				isrestartable, 
 				maxexecutions, 
 				businessrulename, 
 				hiringprocess_id, 
-				<BATCHDATE> as ExtractDate, 
-				<BATCHDATE> as BatchDate, 
-				<SOURCESKEY> as SourceSkey 
-	 FROM flowactivation 
-	 WHERE (datecreated >= <FROMDATE_Q>) OR (datelastmodified >= <FROMDATE_Q>)
+				:BATCHDATE as ExtractDate, 
+				:BATCHDATE as BatchDate, 
+				:SOURCESKEY as SourceSkey 
+	 FROM dbo.flowactivation 
+	 WHERE (datecreated >= :FROMDATE_Q) OR (datelastmodified >= :FROMDATE_Q)

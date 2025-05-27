@@ -29,13 +29,13 @@ SELECT		job_id,
 				clientid, 
 				isactive, 
 				customfield_id, 
-				CONVERT(VARCHAR(19), datecreated, 120) as datecreated, 
-			    CONVERT(VARCHAR(19), datelastmodified, 120) as datelastmodified, 
+				TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated, 
+                TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified,
 				createdby, 
 				lastmodifiedby, 
 				jobcategory, 
-				<BATCHDATE> as ExtractDate, 
-				<BATCHDATE> as BatchDate, 
-				<SOURCESKEY> as SourceSkey 
-	 FROM job 
-	 WHERE (datelastmodified >= <FROMDATE_Q>)
+				:BATCHDATE as ExtractDate, 
+				:BATCHDATE as BatchDate, 
+				:SOURCESKEY as SourceSkey 
+	 FROM dbo.job 
+	 WHERE datelastmodified >= :FROMDATE_Q

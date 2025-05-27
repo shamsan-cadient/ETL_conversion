@@ -11,13 +11,13 @@ SELECT		rht.requisitionhiringteam_id,
 				rht.requisition_id, 
 				rht.member_id as person_id, 
 				rht.memberrole, 
-				rht.IsPrimaryRecruiter,
-				rht.IsActive,
+				rht.isprimaryrecruiter::integer,
+				rht.isactive::integer,
 				TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated, 
 			    TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified,
 				rht.createdby, 
 				rht.lastmodifiedby, 
-				<BATCHDATE> as ExtractDate, 
-				<BATCHDATE> as BatchDate, 
-				<SOURCESKEY> as SourceSkey 
+				<BATCHDATE> as extractdate, 
+				<BATCHDATE> as batchdate, 
+				<SOURCESKEY> as sourceskey 
 	 FROM requisitionhiringteam rht

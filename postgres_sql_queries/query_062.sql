@@ -38,7 +38,7 @@ SELECT	assessmentscoringinstance_id,
 			CAST(cut_score_2 AS numeric(38, 20)) as cut_score_2, 
 			cut_score_1_operator, 
 			cut_score_2_operator, 
-			issilentscore,
+			issilentscore::integer,
 			<BATCHDATE> as ExtractDate, 
 			<BATCHDATE> as BatchDate, 
 			<SOURCESKEY> as SourceSkey 

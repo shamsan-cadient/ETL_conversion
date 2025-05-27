@@ -13,8 +13,8 @@ SELECT scriptscore_id
 	,scorestatus
 	,jobbid_id
 	,script_id
-	,TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') AS datecreated
-	,TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') AS datelastmodified
+	,TO_CHAR(datecreated, ''YYYY-MM-DD HH24:MI:SS'') AS datecreated
+	,TO_CHAR(datelastmodified, ''YYYY-MM-DD HH24:MI:SS'') AS datelastmodified
 	,createdby
 	,lastmodifiedby
 	,scoreband
@@ -22,5 +22,5 @@ SELECT scriptscore_id
 	,< BATCHDATE > AS ExtractDate
 	,< BATCHDATE > AS BatchDate
 	,< SOURCESKEY > AS SourceSkey
-FROM scriptscore WITH (NOLOCK)
+FROM dbo.scriptscore WITH (NOLOCK)
 WHERE (datelastmodified >= < FROMDATE_Q >)

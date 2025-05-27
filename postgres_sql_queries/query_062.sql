@@ -13,10 +13,10 @@ SELECT	assessmentscoringinstance_id,
 			CAST(blendedrawscore AS numeric(38, 20)) as blendedrawscore,
 			status_cd, 
 			responses, 				
-		    TO_CHAR(STARTDATE, 'YYYY-MM-DD HH24:MI:SS') as assessmentstartdate,  
-            TO_CHAR(ENDDATE, 'YYYY-MM-DD HH24:MI:SS') as assessmentenddate, 
-			TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated,  
-			TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified,
+		    TO_CHAR(STARTDATE, ''YYYY-MM-DD HH24:MI:SS'') as assessmentstartdate,  
+            TO_CHAR(ENDDATE, ''YYYY-MM-DD HH24:MI:SS'') as assessmentenddate, 
+			TO_CHAR(datecreated, ''YYYY-MM-DD HH24:MI:SS'') as datecreated,  
+			TO_CHAR(datelastmodified, ''YYYY-MM-DD HH24:MI:SS'') as datelastmodified,
 			clientid, 
 			sitenumber, 
 			geography, 
@@ -42,5 +42,5 @@ SELECT	assessmentscoringinstance_id,
 			<BATCHDATE> as ExtractDate, 
 			<BATCHDATE> as BatchDate, 
 			<SOURCESKEY> as SourceSkey 
-	 FROM ss_assessmentscoringinstance 
+	 FROM dbo.ss_assessmentscoringinstance 
 	 WHERE (datelastmodified >= <FROMDATE_Q>)

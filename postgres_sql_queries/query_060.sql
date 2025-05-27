@@ -11,4 +11,4 @@ SELECT		assessment_id,
 				<BATCHDATE> as ExtractDate, 
 				<BATCHDATE> as BatchDate, 
 				<SOURCESKEY> as SourceSkey 
-	 FROM ss_assessment_factor 
+	 FROM dbo.ss_assessment_factor 

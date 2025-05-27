@@ -8,8 +8,8 @@
 
 SELECT		locationext_id, 
 				redhires::integer, 
-				TO_CHAR(grandopeningdate, 'YYYY-MM-DD HH24:MI:SS') as grandopeningdate,  
+				TO_CHAR(grandopeningdate, ''YYYY-MM-DD HH24:MI:SS'') as grandopeningdate,  
 				<BATCHDATE> as ExtractDate, 
 				<BATCHDATE> as BatchDate, 
 				<SOURCESKEY> as SourceSkey 
-	 FROM tmdlocationext
+	 FROM dbo.tmdlocationext

@@ -12,8 +12,8 @@ SELECT		assessment_id,
 				assessment_name, 
 				assessment_description, 
 				libraryname, 
-				TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated,  
-				TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified,
+				TO_CHAR(datecreated, ''YYYY-MM-DD HH24:MI:SS'') as datecreated,  
+				TO_CHAR(datelastmodified, ''YYYY-MM-DD HH24:MI:SS'') as datelastmodified,
 				createdby, 
 				lastmodifiedby, 
 				assessmenttype_id, 
@@ -22,5 +22,5 @@ SELECT		assessment_id,
 				<BATCHDATE> as ExtractDate, 
 				<BATCHDATE> as BatchDate, 
 				<SOURCESKEY> as SourceSkey 
-	 FROM ss_assessment 
+	 FROM dbo.ss_assessment 
 	 WHERE (datelastmodified >= <FROMDATE_Q>)

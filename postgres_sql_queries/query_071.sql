@@ -10,12 +10,12 @@ SELECT		userext_id,
 				version, 
 				ext_type, 
 				userinfo_id, 
-				TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated,  
-			    TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified, 
+				TO_CHAR(datecreated, ''YYYY-MM-DD HH24:MI:SS'') as datecreated,  
+			    TO_CHAR(datelastmodified, ''YYYY-MM-DD HH24:MI:SS'') as datelastmodified, 
 				createdby, 
 				lastmodifiedby, 
 				<BATCHDATE> as ExtractDate, 
 				<BATCHDATE> as BatchDate, 
 				<SOURCESKEY> as SourceSkey 
-	 FROM userext 
+	 FROM dbo.userext 
 	 WHERE (datelastmodified >= <FROMDATE_Q>)

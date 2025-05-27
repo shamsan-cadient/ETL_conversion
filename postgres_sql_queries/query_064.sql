@@ -12,8 +12,8 @@ SELECT		factor_id,
 				factor_description, 
 				blendedname, 
 				normname, 
-				TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated,  
-			    TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified,
+				TO_CHAR(datecreated, ''YYYY-MM-DD HH24:MI:SS'') as datecreated,  
+			    TO_CHAR(datelastmodified, ''YYYY-MM-DD HH24:MI:SS'') as datelastmodified,
 				createdby, 
 				lastmodifiedby, 
 				factortype_id, 
@@ -22,5 +22,5 @@ SELECT		factor_id,
 				<BATCHDATE> as ExtractDate, 
 				<BATCHDATE> as BatchDate, 
 				<SOURCESKEY> as SourceSkey 
-	 FROM ss_factor 
+	 FROM dbo.ss_factor 
 	 WHERE (datelastmodified >= <FROMDATE_Q>)

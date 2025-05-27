@@ -11,4 +11,4 @@ SELECT		role_permission_id,
 				<BATCHDATE> as ExtractDate, 
 				<BATCHDATE> as BatchDate, 
 				<SOURCESKEY> as SourceSkey 
-	 FROM role_permission 
+	 FROM dbo.role_permission 

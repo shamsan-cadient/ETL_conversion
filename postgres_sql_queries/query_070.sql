@@ -13,8 +13,8 @@
 				<BATCHDATE> as ExtractDate, 
 				<BATCHDATE> as BatchDate, 
 				<SOURCESKEY> as SourceSkey 
-	 FROM userinfo ui
-	 LEFT OUTER JOIN user_role ur
+	 FROM dbo.userinfo ui
+	 LEFT OUTER JOIN dbo.user_role ur
 	 ON ui.userinfo_id = ur.userinfo_id
      WHERE ui.datelastmodified >= <FROMDATE_Q>
 		

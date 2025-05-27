@@ -10,4 +10,4 @@ SELECT		userext_id,
 				<BATCHDATE> as ExtractDate, 
 				<BATCHDATE> as BatchDate, 
 				<SOURCESKEY> as SourceSkey 
-	 FROM tmduserext 
+	 FROM dbo.tmduserext 

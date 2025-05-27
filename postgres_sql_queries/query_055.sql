@@ -23,14 +23,14 @@ SELECT		script_id,
 				yellowscore, 
 				greenscore, 
 				guuid, 
-				TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated,  
+				TO_CHAR(datecreated, ''YYYY-MM-DD HH24:MI:SS'') as datecreated,  
 				createdby, 
-				TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified,
+				TO_CHAR(datelastmodified, ''YYYY-MM-DD HH24:MI:SS'') as datelastmodified,
 				lastmodifiedby, 
 				datachannel_id, 
 				iscompositechild::integer, 
 				<BATCHDATE> as ExtractDate, 
 				<BATCHDATE> as BatchDate, 
 				<SOURCESKEY> as SourceSkey 
-	 FROM script_atao 
+	 FROM dbo.script_atao 
 	 WHERE (datelastmodified >= <FROMDATE_Q>) 

@@ -6,14 +6,14 @@
 -- MaxVersion: 999
 -- Extracted on: 2025-05-25T17:11:39.349908
 
-SELECT /*+ index(jbr IX_JOBBID_RESP_DATEMOD) index(r SYS_C009206) */ 
+SELECT 
 				jbr.jobbid_response_id, 
 				jbr.version, 
 				jbr.script_id, 
 				jbr.response_id, 
 				jbr.jobbid_id, 
 				--Grab the text for the answer if it is for a Datameaning that does not have a standard answer value (like Birth Date)
-				case when q.datameaning_id IS NOT NULL and r.answer_id IS NULL then DBMS_LOB.SUBSTR(jbr.answer,255) 
+				case when q.datameaning_id IS NOT NULL and r.answer_id IS NULL then SUBSTRING(jbr.answer, 1, 255) 
 				else '' end answer,				
 				jbr.responsegroup, 
 				TO_CHAR(jbr.datecreated,'YYYY-MM-DD HH24:MI:SS') as datecreated, 

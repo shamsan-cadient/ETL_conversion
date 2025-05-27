@@ -15,7 +15,7 @@ SELECT
     lastmodifiedby, 
     jobbid_id, 
     processinstance_id, 
-    isactive, 
+    isactive::integer, 
     flowname, 
     instancestate, 
     workflowtype, 
@@ -26,8 +26,8 @@ SELECT
     parent_processinstance_id, 
     businessrulename, 
     workflowcategory, 
-    :BATCHDATE as ExtractDate, 
-    :BATCHDATE as BatchDate, 
-    :SOURCESKEY as SourceSkey 
+    <BATCHDATE> as ExtractDate, 
+	<BATCHDATE> as BatchDate, 
+	<SOURCESKEY> as SourceSkey 
 FROM dbo.jobbid_workflow_instance jbwi
-WHERE datelastmodified >= :FROMDATE_Q;
+WHERE datelastmodified >= <FROMDATE_Q>;

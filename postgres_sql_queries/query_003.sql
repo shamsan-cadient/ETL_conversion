@@ -8,7 +8,7 @@
 
 SELECT		availability_id, 
 				version, 
-				TO_CHAR(startdate, 'YYYY-MM-DD HH24:MI:SS') as startdate, 
+				CONVERT(VARCHAR(19), startdate, 120) as startdate, 
 				workpreference, 
 				mondaystarttime, 
 				mondayendtime, 
@@ -35,13 +35,13 @@ SELECT		availability_id,
 				hoursperweek, 
 				document_id, 
 				customfield_id, 
-				TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated, 
-                TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified,  
+				 TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated, 
+                TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified, 
 				createdby, 
 				lastmodifiedby, 
 				availabilitybits,
-				:BATCHDATE as ExtractDate, 
-				:BATCHDATE as BatchDate, 
-				:SOURCESKEY as SourceSkey 
+				<BATCHDATE> as ExtractDate, 
+				<BATCHDATE> as BatchDate, 
+				<SOURCESKEY> as SourceSkey 
 	 FROM dbo.availability 
-	 WHERE datelastmodified >= :FROMDATE_Q;
+	 WHERE (datelastmodified >= <FROMDATE_Q>)

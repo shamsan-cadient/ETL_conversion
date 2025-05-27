@@ -16,8 +16,8 @@ SELECT  locale_id,
         TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified, 
         createdby, 
         lastmodifiedby, 
-        :BATCHDATE as ExtractDate, 
-        :BATCHDATE as BatchDate, 
-        :SOURCESKEY as SourceSkey 
+        <BATCHDATE> as ExtractDate, 
+		<BATCHDATE> as BatchDate, 
+		<SOURCESKEY> as SourceSkey 
 FROM dbo.locale 
-WHERE datelastmodified >= :FROMDATE_Q;
+WHERE datelastmodified >= <FROMDATE_Q>;

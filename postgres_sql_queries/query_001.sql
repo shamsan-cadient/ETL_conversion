@@ -17,8 +17,8 @@ controllercontext,
 defaultsequence, 
 loginsequence, 
 locator, 
-isexternal, 
-isdefault, 
+isexternal::integer, 
+isdefault::integer, 
 client_id, 
 role_id, 
 TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated, 
@@ -26,9 +26,9 @@ TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified,
 createdby, 
 lastmodifiedby, 
 applicationcategory, 
-:BATCHDATE AS ExtractDate,
-:BATCHDATE AS BatchDate,
-:SOURCESKEY AS SourceSkey
+<BATCHDATE> as ExtractDate, 
+<BATCHDATE> as BatchDate, 
+<SOURCESKEY> as SourceSkey 
 FROM dbo.application 
-WHERE datelastmodified >= :FROMDATE_Q;
+WHERE datelastmodified >= <FROMDATE_Q>;
 

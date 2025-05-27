@@ -24,10 +24,10 @@ SELECT
     WHEN nv.stringvalue_ IS NULL THEN NULL
     ELSE nc.stringvalue_
   END AS workflowcategory,
-  h.isforautodisposition,
-  :BATCHDATE AS ExtractDate,
-  :BATCHDATE AS BatchDate,
-  :SOURCESKEY AS SourceSkey
+  h.isforautodisposition::integer,
+ <BATCHDATE> as ExtractDate, 
+<BATCHDATE> as BatchDate, 
+<SOURCESKEY> as SourceSkey 
 FROM dbo.jobbid_workflow_history h
 LEFT JOIN dbo.jbpm_variableinstance nv
   ON nv.processinstance_ = h.processinstance_id
@@ -35,4 +35,4 @@ LEFT JOIN dbo.jbpm_variableinstance nv
 LEFT JOIN dbo.jbpm_variableinstance nc
   ON nc.processinstance_ = h.processinstance_id
   AND nc.name_ = 'workflowCategory'
-WHERE h.datelastmodified >= :FROMDATE_Q;
+WHERE h.datelastmodified >= <FROMDATE_Q>;

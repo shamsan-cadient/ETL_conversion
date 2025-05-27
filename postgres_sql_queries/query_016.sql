@@ -16,20 +16,20 @@
         script_id,
         script_type,
         scriptweight,
-        isprimary,
-        iscomplete,
+        isprimary::integer,
+        iscomplete::integer,
         TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated,
         TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified,
         createdby,
         lastmodifiedby,
         assessmentphase_id,
-        issilentscore,
-        :BATCHDATE as ExtractDate,
-        :BATCHDATE as BatchDate,
-        :SOURCESKEY as SourceSkey
+        issilentscore::integer,
+       <BATCHDATE> as ExtractDate, 
+		<BATCHDATE> as BatchDate, 
+		<SOURCESKEY> as SourceSkey 
     FROM 
         dbo.jobbid_script
     WHERE 
-        datelastmodified >= :FROMDATE_Q;
+        datelastmodified >= <FROMDATE_Q>;
 
 

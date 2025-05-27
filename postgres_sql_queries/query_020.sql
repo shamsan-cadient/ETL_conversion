@@ -18,8 +18,8 @@ SELECT  jobopening_id,
 	lastmodifiedby, 
 	guuid, 
 	positionkey_count, 
-	:BATCHDATE as ExtractDate, 
-    :BATCHDATE as BatchDate, 
-    :SOURCESKEY as SourceSkey 
+	<BATCHDATE> as ExtractDate, 
+	<BATCHDATE> as BatchDate, 
+	<SOURCESKEY> as SourceSkey  
 FROM dbo.jobopening 
-WHERE datelastmodified >= :FROMDATE_Q;
+WHERE datelastmodified >= <FROMDATE_Q>;

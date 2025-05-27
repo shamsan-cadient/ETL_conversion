@@ -10,14 +10,14 @@ SELECT		displaysetvalue_id,
 				version, 
 				definition_id, 
 				name, 
-				isactive, 
-				 TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated, 
-                 TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified, 
+				isactive::integer, 
+				TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated, 
+				TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified,
 				createdby, 
 				lastmodifiedby, 
 				label_id, 
 				qual_id, 
-				:BATCHDATE as ExtractDate, 
-				:BATCHDATE as BatchDate, 
-				:SOURCESKEY as SourceSkey 
-	 FROM dbo.displaysetvalue
+				<BATCHDATE> as ExtractDate, 
+				<BATCHDATE> as BatchDate, 
+				<SOURCESKEY> as SourceSkey 
+	 FROM dbo.displaysetvalue;

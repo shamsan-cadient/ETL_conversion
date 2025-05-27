@@ -20,8 +20,8 @@
 								mgrEthnicity,
 								mgrRace,
 								mgrGender,
-								:BATCHDATE as ExtractDate, 
-								:BATCHDATE as BatchDate, 
-								:SOURCESKEY as SourceSkey 
+								<BATCHDATE> as ExtractDate, 
+								<BATCHDATE> as BatchDate, 
+								<SOURCESKEY> as SourceSkey 
 					 FROM dbo.eeo 
-					 WHERE datelastmodified >= :FROMDATE_Q
+					 WHERE datelastmodified >= <FROMDATE_Q>;

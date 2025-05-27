@@ -6,7 +6,7 @@
 -- MaxVersion: 999
 -- Extracted on: 2025-05-25T17:11:39.348225
 
-SELECT		/*+first_rows cursor_sharing_exact INDEX(p, FBI_PS1_DATELASTMODIFIED)*/
+SELECT
 			p.phasescore_id
 			,o.overallphasescore_id
 			,o.assessmentphase_id

@@ -10,14 +10,14 @@ SELECT
     jp.jobbidposting_id, 
     jp.jobbid_id, 
     jp.posting_id, 
-    jp.isqualified, 
-    jp.isprimary, 
+   jp.isprimary::integer, 
+   jp.metassessmentcriteria::integer, 
     jp.metassessmentcriteria, 
-    :BATCHDATE as ExtractDate, 
-    :BATCHDATE as BatchDate, 
-    :SOURCESKEY as SourceSkey 
+   <BATCHDATE> as ExtractDate, 
+    <BATCHDATE> as BatchDate, 
+   <SOURCESKEY> as SourceSkey 
 FROM 
     dbo.jobbid_posting jp 
     INNER JOIN jobbid jb ON jp.jobbid_id = jb.jobbid_id 
 WHERE 
-    jb.datelastmodified >= :FROMDATE_Q;
+    jb.datelastmodified >= <FROMDATE_Q>;

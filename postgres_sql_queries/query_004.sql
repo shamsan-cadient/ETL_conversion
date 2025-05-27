@@ -38,8 +38,8 @@ SELECT  client_id,
         TO_CHAR(legalholdenddate, 'YYYY-MM-DD HH24:MI:SS') as legalholdenddate, 
         TO_CHAR(deactivationdate, 'YYYY-MM-DD HH24:MI:SS') as deactivationdate, 
         customertype, 
-        :BATCHDATE as ExtractDate, 
-        :BATCHDATE as BatchDate, 
-        :SOURCESKEY as SourceSkey 
+       <BATCHDATE> as ExtractDate, 
+        <BATCHDATE> as BatchDate, 
+        <SOURCESKEY> as SourceSkey eSkey 
 FROM dbo.client 
-WHERE datelastmodified >= :FROMDATE_Q;
+WHERE datelastmodified >= <FROMDATE_Q>;

@@ -13,11 +13,11 @@ SELECT
     bidstatus,
     jobbid_id,
     localuser_id,
-    :BATCHDATE as ExtractDate,
-    :BATCHDATE as BatchDate,
-    :SOURCESKEY as SourceSkey
+   <BATCHDATE> as ExtractDate, 
+	<BATCHDATE> as BatchDate, 
+	<SOURCESKEY> as SourceSkey 
 FROM 
     dbo.jobbid_statuslog
 WHERE 
-    datecreated >= :FROMDATE_Q 
+    datecreated >= <FROMDATE_Q>
     AND bidstatus IN ('JobBidStatuses.hired', 'JobBidStatuses.Offered');

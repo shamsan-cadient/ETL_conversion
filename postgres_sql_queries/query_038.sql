@@ -9,7 +9,7 @@
 SELECT		logicallabel_id, 
 				version, 
 				label, 
-				mutable, 
+				mutable::integer, 
 				labeltype, 
 				TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated, 
 			    TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified, 

@@ -8,22 +8,22 @@
 
 
 		
-		SELECT LOCALEQUESTION_ID
-			,VERSION
-			,LOCALE_ID
-			,QUESTION_ID
-			,QUESTIONTEXT
-			,		TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') AS DATECREATED
-			,CREATEDBY
-			,		TO_CHAR(DATELASTMODIFIED, 'YYYY-MM-DD HH24:MI:SS') AS DATELASTMODIFIED
-			,LASTMODIFIEDBY
-			,QUESTIONSUBTEXT
-			,QUESTIONPOPUPTEXT
-			,QUESTIONADDITIONALNOTESTEXT,
-			<BATCHDATE> as ExtractDate, 
-				<BATCHDATE> as BatchDate, 
-				<SOURCESKEY> as SourceSkey 
-		FROM LOCALE_QUESTION_ATAO
+		SELECT localequestion_id
+			,version
+			,locale_id
+			,question_id
+			,questiontext
+			,TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') AS datecreated
+			,createdby
+			,TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') AS datelastmodified
+			,lastmodifiedby
+			,questionsubtext
+			,questionpopuptext
+			,questionadditionalnotestext,
+			<BATCHDATE> as extractdate, 
+				<BATCHDATE> as batchdate, 
+				<SOURCESKEY> as sourceskey 
+		FROM locale_question_atao
 		WHERE 
-			(DateCreated >= <FROMDATE_Q>  or DateLastModified >= <FROMDATE_Q> )
+			(datecreated >= <FROMDATE_Q>  or datelastmodified >= <FROMDATE_Q> )
 		

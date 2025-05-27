@@ -11,11 +11,11 @@ SELECT		displaysetdefinition_id,
 				name, 
 				label_id, 
 				qual_id, 
-				TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated, 
-				TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified,
-				createdby, 
+				 TO_CHAR(datecreated, 'YYYY-MM-DD HH24:MI:SS') as datecreated, 
+				TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified, 
+				createdby,  
 				lastmodifiedby, 
-				<BATCHDATE> as ExtractDate, 
-				<BATCHDATE> as BatchDate, 
-				<SOURCESKEY> as SourceSkey 
-	 FROM displaysetdefinition
+				:BATCHDATE as ExtractDate, 
+				:BATCHDATE as BatchDate, 
+				:SOURCESKEY as SourceSkey
+	 FROM dbo.displaysetdefinition

@@ -19,8 +19,8 @@ SELECT		flowactivation_id,
 				maxexecutions, 
 				businessrulename, 
 				hiringprocess_id, 
-				<BATCHDATE> as ExtractDate, 
-				<BATCHDATE> as BatchDate, 
-				<SOURCESKEY> as SourceSkey 
-	 FROM flowactivation 
-	 WHERE (datecreated >= <FROMDATE_Q>) OR (datelastmodified >= <FROMDATE_Q>)
+				:BATCHDATE as ExtractDate, 
+				:BATCHDATE as BatchDate, 
+				:SOURCESKEY as SourceSkey 
+	 FROM dbo.flowactivation 
+	 WHERE (datecreated >= :FROMDATE_Q) OR (datelastmodified >= :FROMDATE_Q)

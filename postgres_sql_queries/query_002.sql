@@ -8,7 +8,8 @@
 
 SELECT		application_id, 
 				locale_id, 
-				<BATCHDATE> as ExtractDate, 
-				<BATCHDATE> as BatchDate, 
-				<SOURCESKEY> as SourceSkey 
-	 FROM application_locale 
+				:BATCHDATE AS ExtractDate,
+				:BATCHDATE AS BatchDate,
+				:SOURCESKEY AS SourceSkey
+
+	 FROM dbo.application_locale 

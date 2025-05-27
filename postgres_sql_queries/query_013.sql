@@ -5,6 +5,8 @@
 -- MinVersion: 8.5
 -- MaxVersion: 999
 -- Extracted on: 2025-05-25T17:11:39.329851
+
+
 SELECT jobbid_id
 	,version
 	,TO_CHAR(biddate, 'YYYY-MM-DD HH24:MI:SS') AS biddate
@@ -63,9 +65,9 @@ SELECT jobbid_id
 	,videoconfirmation::integer
 	,overallphasescore_id
 	,scoredisplaylevel
-	,NULL AS isexplicitlyunlocked
-	,< BATCHDATE > AS ExtractDate
-	,< BATCHDATE > AS BatchDate
-	,CAST(1 AS INTEGER) AS SourceSkey
-FROM jobbid
-WHERE (datelastmodified >= < BATCHDATE >)
+	,NULL AS isexplicitlyunlocked,
+  :BATCHDATE AS ExtractDate,
+  :BATCHDATE AS BatchDate,
+  CAST(1 AS int) AS SourceSkey
+FROM dbo.jobbid
+WHERE datelastmodified >= :BATCHDATE;

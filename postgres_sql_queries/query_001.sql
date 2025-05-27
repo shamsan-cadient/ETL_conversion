@@ -26,8 +26,9 @@ TO_CHAR(datelastmodified, 'YYYY-MM-DD HH24:MI:SS') as datelastmodified,
 createdby, 
 lastmodifiedby, 
 applicationcategory, 
-<BATCHDATE> as ExtractDate, 
-<BATCHDATE> as BatchDate, 
-<SOURCESKEY> as SourceSkey
-FROM application 
-WHERE (datelastmodified >= <FROMDATE_Q>)
+:BATCHDATE AS ExtractDate,
+:BATCHDATE AS BatchDate,
+:SOURCESKEY AS SourceSkey
+FROM dbo.application 
+WHERE datelastmodified >= :FROMDATE_Q;
+

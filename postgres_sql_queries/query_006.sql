@@ -17,7 +17,7 @@ SELECT		displaysetvalue_id,
 				lastmodifiedby, 
 				label_id, 
 				qual_id, 
-				<BATCHDATE> as ExtractDate, 
-				<BATCHDATE> as BatchDate, 
-				<SOURCESKEY> as SourceSkey 
-	 FROM displaysetvalue
+				:BATCHDATE as ExtractDate, 
+				:BATCHDATE as BatchDate, 
+				:SOURCESKEY as SourceSkey 
+	 FROM dbo.displaysetvalue
